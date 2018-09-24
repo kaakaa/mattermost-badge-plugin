@@ -14,3 +14,4 @@ Generate Mattermost invitation badge plugin.
 
 ## Known Issue
 * Now, since this plugin serves all badges on Mattermost, network traffic may increase
+ * If you have an idea, please write it [here](https://github.com/kaakaa/mattermost-badge-plugin/issues/1)
