@@ -10,7 +10,7 @@ Generate Mattermost invitation badge plugin.
 
 ## Installation
 
-1. Download plugin `.tar.gz` from release page.
+1. Download plugin `com.kaakaa.github.mattermostbadge-X.X.X.tar.gz` from release page.
 2. Upload plugin from **System Console** > **Plugins** > **Management**.
 3. Run `/badge` command on a Mattermost channel, then copy & paste the displayed link.
 
