@@ -27,7 +27,7 @@
 
 [[constraint]]
   name = "github.com/mattermost/mattermost-server"
-  branch = "master"
+  version = "5.7.0"
 
 [prune]
   go-tests = true
