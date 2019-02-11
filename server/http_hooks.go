@@ -15,8 +15,13 @@ func (p *Plugin) ServeHTTP(c *plugin.Context, w http.ResponseWriter, r *http.Req
 
 func (p *Plugin) InitAPI() *mux.Router {
 	r := mux.NewRouter()
-	r.HandleFunc("/teams/{team_id:[a-z0-9]+}/channels/{channel_id:[a-z0-9]+}/badge.svg", p.handleBadge)
+	r.HandleFunc("/", p.handleInfo).Methods("GET")
+	r.HandleFunc("/teams/{team_id:[a-z0-9]+}/channels/{channel_id:[a-z0-9]+}/badge.svg", p.handleBadge).Methods("GET")
 	return r
+}
+
+func (p *Plugin) handleInfo(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("MetterBadge"))
 }
 
 func (p *Plugin) handleBadge(w http.ResponseWriter, r *http.Request) {

@@ -1,5 +1,5 @@
 {
-    "id": "com.kaakaa.github.MattermostBadge",
+    "id": "com.kaakaa.github.mattermostbadge",
     "name": "Mattermost Badges Plugin",
     "description": "This plugin serves badges for invitation mattermost channels.",
     "version": "0.0.1",

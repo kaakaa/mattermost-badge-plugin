@@ -1,0 +1,21 @@
+notifications:
+  email: false
+language: go
+go:
+- 1.11.x
+install:
+- curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+script:
+- make test
+before_deploy:
+- make dist
+deploy:
+  provider: releases
+  api_key:
+    secure: UT5//zZ9OuNiV6nEAPQMQBXbEnH2S/tBo9I7oQ6lspREc9EDfrNlchjl7mNvCwlc50reK8CMozfEOwy3zy11tAjyejdPC5X5F9CNYCb5vlmrdcXyNxBiNoHla/FLONrlqyehyAOJZcV4MhkSX4LXsy/rMPdrocX0uPqYOBvkabakp6NYBtC0g7zb/JjtqDTC70Cs1yt/TTCwqUT6Y7v1RMoMzxTAG+mn+Tz4w2uMQ93WpKUSpJ9QdxxUsoylL5FJzYGBvDTzN75ZZYIEQ+XJiZBK0aL4zhbnQ1KW6uyUdoc8E0I9UehLenI/v/CDLFGiSh582SWdo42NvaPyKKhGu0xpeQyanVSHuRU77np/iEX2qV+eNIDQaC++R4/QIJ980m/2khBUQgGM+Q/crI1b4a2RuoBOEwquUQB0lxE/ZhEmT8AmobzJvkb8/Hnbo0lgSVYB1GsJ06fbLNw6JwSoxxXjCvwboi0ojeB9echTj+zo+5X7Lpe3kzs1j4q3HsWLc47h1At7u5p8pSAdvupoQHQ4tjuN3OVScUo21wM3YpAClxAPLwlgLSTclHdg53S0oV4s5VmoWCqn5hOAcVknmXdqNjJ/V7V3fEHWHkl1shECdbxJn1uwu2p1yqG8OBatmwR/WkZhJ186UEcm5Nq1t17aGW9r9wEIpd6SWsDqNzU=
+  file_glob: true
+  file: dist/com.kaakaa.github.MattermostBadge-*.tar.gz
+  skip_cleanup: true
+  on:
+    repo: kaakaa/mattermost-badge-plugin
+    tags: true
