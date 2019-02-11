@@ -29,7 +29,7 @@ func (p *Plugin) ExecuteCommand(c *plugin.Context, args *model.CommandArgs) (*mo
 		return nil, err
 	}
 
-	badge := fmt.Sprintf(BadgeMarkdownTemplate, siteURL, PluginId, teamID, channelID)
+	badge := fmt.Sprintf(BadgeMarkdownTemplate, siteURL, manifest.Id, teamID, channelID)
 	channelURL := fmt.Sprintf(ChannelURLTemplate, siteURL, team.Name, ch.Name)
 	badgeLink := fmt.Sprintf("[%s](%s)", badge, channelURL)
 	return &model.CommandResponse{
